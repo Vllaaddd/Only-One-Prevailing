@@ -1,0 +1,113 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< action mssge 2
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P1 > 
+< action mssge 2
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P1 > 
+< action mssge 2
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P1 > 
+< action mssge 2
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|   |
+>  1 | W |P02|
+>      1   2  
+>     018 004 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|P02|
+>  1 | W | W |
+>      1   2  
+>     018 002 rations
+> 
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|P02|
+>  1 | W | W |
+>      1   2  
+>     017 002 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> Oh no, Player 2 has starved!
+> [🦈] The shark smells food and approaches the players...
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|🦈 |
+>  1 | W | W |
+>      1   2  
+>     017 000 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P1 > 
+< 1
+> [🦈] The shark will move along the path [ W ] swiftly!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|   |
+>  2 |🦈 | K |
+>  1 | W | W |
+>      1   2  
+>     015 000 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P1 > 
+< 1
+> [🦈] The shark will move along the path [ E ] swiftly!
+> 
+>  5 |   |   |
+>  4 |P01|   |
+>  3 | W |   |
+>  2 | W |🦈 |
+>  1 | W | W |
+>      1   2  
+>     013 000 rations
+> 
+? P1 > 
+< quit

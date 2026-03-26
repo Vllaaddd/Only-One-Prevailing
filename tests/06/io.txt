@@ -1,0 +1,133 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|   |
+>  1 | K |P02|
+>      1   2  
+>     009 012 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Island Calling - Moved forward and back again due to the island's calling!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|   |
+>  1 | K |P02|
+>      1   2  
+>     009 010 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Ocean Debris - Gained a new action card!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|   |
+>  2 | D |   |
+>  1 | K |P02|
+>      1   2  
+>     007 010 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - PIRAT - Pirate - SOUTH
+> - LOSTS - Lost at Sea - NORTH
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|   |
+>  2 | D |P02|
+>  1 | K | K |
+>      1   2  
+>     007 007 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Island Calling - Moved forward and back again due to the island's calling!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|   |
+>  2 | D |P02|
+>  1 | K | K |
+>      1   2  
+>     005 007 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Ocean Debris - Gained a new action card!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|P02|
+>  2 | D | D |
+>  1 | K | K |
+>      1   2  
+>     005 005 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - MSSGE - Message in a Bottle - WEST
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - EAST
+> - MSSGE - Message in a Bottle - WEST
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|P02|
+>  2 | D | D |
+>  1 | K | K |
+>      1   2  
+>     004 005 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |P01|P02|
+>  2 | D | D |
+>  1 | K | K |
+>      1   2  
+>     004 004 rations
+> 
+? P1 > 
+< quit

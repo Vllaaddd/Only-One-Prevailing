@@ -1,0 +1,271 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |   |   |   |
+>  1 |P01|P02|P03|
+>      1   2   3  
+>     012 012 012 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< action losts 3
+> Select target hand card:
+? P1 > 
+< 1
+> [🔥] Played Lost at Sea - Discarded another player's hand card!
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|   |   |
+>  1 | K |P02|P03|
+>      1   2   3  
+>     009 012 012 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - NORTH
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+? P2 > 
+< action mssge 1
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|   |   |
+>  1 | K |P02|P03|
+>      1   2   3  
+>     007 013 012 rations
+> 
+? P3 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - NORTH
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - NORTH
+? P3 > 
+< action losts 2
+> Select target hand card:
+? P3 > 
+< 1
+> [🔥] Played Lost at Sea - Discarded another player's hand card!
+? P3 > 
+< action mssge 1
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|   |   |
+>  1 | K |P02|P03|
+>      1   2   3  
+>     005 013 013 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Island Calling - Moved forward and back again due to the island's calling!
+> [🦈] The shark smells food and approaches the players...
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|   |   |
+>  1 |🦈 |P02|P03|
+>      1   2   3  
+>     003 013 013 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Ocean Debris - Gained a new action card!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|P02|   |
+>  1 |🦈 | D |P03|
+>      1   2   3  
+>     003 011 013 rations
+> 
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P1 > 
+< 4
+> Select target hand card:
+? P2 > 
+< 1
+> Select target hand card:
+? P3 > 
+< 1
+> [🦈] The shark will move along the path [ N E N ] swiftly!
+> [🦈] Yum, the shark was given a ration to eat!
+> [🦈] Yum, the shark was given a ration to eat!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |🦈 |   |
+>  2 |P01|P02|P03|
+>  1 | K | D | W |
+>      1   2   3  
+>     002 010 011 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> Oh no, Player 1 has starved!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |🦈 |   |
+>  2 | K |P02|P03|
+>  1 | K | D | W |
+>      1   2   3  
+>     000 010 011 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Island Calling - Moved forward and back again due to the island's calling!
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P2 > 
+< 2
+> Select target hand card:
+? P3 > 
+< 1
+> [🦈] The shark will move along the path [ E S ] swiftly!
+> [🦈] Yum, the shark was given a ration to eat!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 | K |P02|🦈 |
+>  1 | K | D | W |
+>      1   2   3  
+>     000 008 010 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 | K |P02|🦈 |
+>  1 | K | D | W |
+>      1   2   3  
+>     000 008 009 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Ocean Debris - Gained a new action card!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |P02|   |
+>  2 | K | D |🦈 |
+>  1 | K | D | W |
+>      1   2   3  
+>     000 006 009 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |P02|   |
+>  2 | K | D |🦈 |
+>  1 | K | D | W |
+>      1   2   3  
+>     000 006 008 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P2 > 
+< 1
+> Select target hand card:
+? P3 > 
+< 1
+> [🦈] The shark will move along the path [ S E ] swiftly!
+> 
+>  5 |   |   |   |
+>  4 |   |P02|   |
+>  3 |   | W |   |
+>  2 | K | D |P03|
+>  1 | K | D |🦈 |
+>      1   2   3  
+>     000 004 008 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |   |P02|   |
+>  3 |   | W |   |
+>  2 | K | D |P03|
+>  1 | K | D |🦈 |
+>      1   2   3  
+>     000 004 007 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> 
+>  5 |   |P02|   |
+>  4 |   |   |   |
+>  3 |   | W |   |
+>  2 | K | D |P03|
+>  1 | K | D |🦈 |
+>      1   2   3  
+>     000 004 007 rations
+> 
+> 
+> Congratulations player 2, you are the Only One Prevailing!

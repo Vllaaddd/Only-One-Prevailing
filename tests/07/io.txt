@@ -1,0 +1,88 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - MSSGE - Message in a Bottle - WEST
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] The shark smells food and approaches the players...
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|   |
+>  1 |🦈 |P02|
+>      1   2  
+>     010 012 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - PIRAT - Pirate - SOUTH
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> [🦈] Oh no, the shark is looking for food!
+> Select target hand card:
+? P1 > 
+< 2
+> Select target hand card:
+? P2 > 
+< 3
+> [🦈] The shark will move along the path [ N N ] swiftly!
+> [🦈] Yum, the shark was given a ration to eat!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |🦈 |   |
+>  2 |P01|P02|
+>  1 | W | W |
+>      1   2  
+>     009 010 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - MSSGE - Message in a Bottle - WEST
+> - MSSGE - Message in a Bottle - WEST
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |🦈 |   |
+>  2 |P01|P02|
+>  1 | W | W |
+>      1   2  
+>     008 010 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - LOSTS - Lost at Sea - NORTH
+? P2 > 
+< quit

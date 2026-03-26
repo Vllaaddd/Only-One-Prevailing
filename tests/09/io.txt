@@ -1,0 +1,349 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |   |   |   |   |
+>  1 |P01|P02|P03|P04|
+>      1   2   3   4  
+>     012 012 012 012 rations
+> 
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |   |   |   |   |
+>  1 |P01|P02|P03|P04|
+>      1   2   3   4  
+>     011 012 012 012 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |   |   |   |   |
+>  1 |P01|P02|P03|P04|
+>      1   2   3   4  
+>     011 011 012 012 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |   |   |   |   |
+>  1 |P01|P02|P03|P04|
+>      1   2   3   4  
+>     011 011 011 012 rations
+> 
+? P4 > 
+< swim
+> Player 4 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |   |   |   |P04|
+>  1 |P01|P02|P03| K |
+>      1   2   3   4  
+>     011 011 011 009 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |P01|   |   |P04|
+>  1 | K |P02|P03| K |
+>      1   2   3   4  
+>     008 011 011 009 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |P01|P02|   |P04|
+>  1 | K | K |P03| K |
+>      1   2   3   4  
+>     008 008 011 009 rations
+> 
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |   |
+>  2 |P01|P02|P03|P04|
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     008 008 008 009 rations
+> 
+? P4 > 
+< swim
+> Player 4 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |P04|
+>  2 |P01|P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     008 008 008 006 rations
+> 
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |P04|
+>  2 |P01|P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     007 008 008 006 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |P04|
+>  2 |P01|P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     007 007 008 006 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |P04|
+>  2 |P01|P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     007 007 007 006 rations
+> 
+? P4 > 
+< float
+> Player 4 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |   |   |   |P04|
+>  2 |P01|P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     007 007 007 005 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |P01|   |   |P04|
+>  2 | K |P02|P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     004 007 007 005 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |P01|P02|   |P04|
+>  2 | K | K |P03| K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     004 004 007 005 rations
+> 
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 |P01|P02|P03|P04|
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     004 004 004 005 rations
+> 
+? P4 > 
+< swim
+> Player 4 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 |P01|P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     004 004 004 002 rations
+> 
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 |P01|P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     003 004 004 002 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 |P01|P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     003 003 004 002 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 |P01|P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     003 003 003 002 rations
+> 
+? P4 > 
+< float
+> Player 4 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 |P01|P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     003 003 003 001 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> Oh no, Player 1 has starved!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 | K |P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 003 003 001 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 | K |P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 002 003 001 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |P04|
+>  3 | K |P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 002 002 001 rations
+> 
+? P4 > 
+< float
+> Player 4 floats in place.
+> Oh no, Player 4 has starved!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 | K |P02|P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 002 002 000 rations
+> 
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> Oh no, Player 2 has starved!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 | K | K |P03| K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 000 002 000 rations
+> 
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Kraken - Lost a ration to the Kraken!
+> Oh no, Player 3 has starved!
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 | K | K | K | K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 000 000 000 rations
+> 
+> 
+>  5 |   |   |   |   |
+>  4 |   |   |   |   |
+>  3 | K | K | K | K |
+>  2 | K | K | K | K |
+>  1 | K | K | K | K |
+>      1   2   3   4  
+>     000 000 000 000 rations
+> 
+> 
+> Beaten by the whims of the sea, the game ends in a draw... Better luck next time.

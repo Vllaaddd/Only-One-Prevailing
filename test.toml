@@ -1,0 +1,105 @@
+[project_definition]
+binary_path = "./a1"
+makefile_path = "."
+make_targets = ["all"]
+project_name = "a1"
+global_timeout = 20
+
+[[testcases]]
+name = "Config file path incorrect"
+description = "Config file path incorrect"
+type = "OrdIO"
+io_file = "tests/01/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 3
+argv = ["2", "configs/not_a_file.txt"]
+
+[[testcases]]
+name = "Deck command with error handling"
+description = "Deck command with error handling"
+type = "OrdIO"
+io_file = "tests/02/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_02.txt"]
+
+[[testcases]]
+name = "Basic Hand/Board command with error handling"
+description = "Basic Hand/Board command with error handling"
+type = "OrdIO"
+io_file = "tests/03/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_03.txt"]
+
+[[testcases]]
+name = "Basic PlayerActionCard"
+description = "Basic PlayerActionCard"
+type = "OrdIO"
+io_file = "tests/04/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["3", "configs/config_04.txt"]
+
+[[testcases]]
+name = "Basic Float/Swim, without ActionCards and Shark"
+description = "Basic Float/Swim, without ActionCards and Shark"
+type = "OrdIO"
+io_file = "tests/05/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["3", "configs/config_05.txt"]
+
+[[testcases]]
+name = "OceanCard Effects"
+description = "OceanCard Effects"
+type = "OrdIO"
+io_file = "tests/06/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_06.txt"]
+
+[[testcases]]
+name = "Basic Shark Movement"
+description = "Basic Shark Movement"
+type = "OrdIO"
+io_file = "tests/07/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_07.txt"]
+
+[[testcases]]
+name = "All Players Except One Starved"
+description = "All Players Except One Starved"
+type = "OrdIO"
+io_file = "tests/08/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_08.txt"]
+
+[[testcases]]
+name = "All players starve to Krakens"
+description = "All players starve to Krakens"
+type = "OrdIO"
+io_file = "tests/09/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["4", "configs/config_09.txt"]
+
+[[testcases]]
+name = "Example Output 1"
+description = "Example Output 1"
+type = "OrdIO"
+io_file = "tests/10/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["2", "configs/config_10.txt"]
+
+[[testcases]]
+name = "Example Output 2"
+description = "Example Output 2"
+type = "OrdIO"
+io_file = "tests/11/io.txt"
+io_prompt = "^P[1-5]\\s>\\s*$"
+exp_exit_code = 0
+argv = ["3", "configs/config_11.txt"]

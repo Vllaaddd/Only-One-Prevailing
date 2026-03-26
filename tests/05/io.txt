@@ -1,0 +1,306 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |   |   |   |
+>  1 |P01|P02|P03|
+>      1   2   3  
+>     012 012 012 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|   |   |
+>  1 | W |P02|P03|
+>      1   2   3  
+>     010 012 012 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|P02|   |
+>  1 | W | W |P03|
+>      1   2   3  
+>     010 010 012 rations
+> 
+? P3 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - WEST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |   |   |   |
+>  2 |P01|P02|P03|
+>  1 | W | W | W |
+>      1   2   3  
+>     010 010 010 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |P01|   |   |
+>  2 | W |P02|P03|
+>  1 | W | W | W |
+>      1   2   3  
+>     008 010 010 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |P01|P02|   |
+>  2 | W | W |P03|
+>  1 | W | W | W |
+>      1   2   3  
+>     008 008 010 rations
+> 
+? P3 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - WEST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - WEST
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |   |   |   |
+>  3 |P01|P02|P03|
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     008 008 008 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |P01|   |   |
+>  3 | W |P02|P03|
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     006 008 008 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - LOSTS - Lost at Sea - NORTH
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|   |
+>  3 | W | W |P03|
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     006 006 008 rations
+> 
+? P3 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - WEST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - WEST
+> - MSSGE - Message in a Bottle - WEST
+? P3 > 
+< swim
+> Player 3 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     006 006 006 rations
+> 
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     005 006 006 rations
+> 
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     005 005 006 rations
+> 
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     005 005 005 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - WEST
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     004 005 005 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - LOSTS - Lost at Sea - NORTH
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+? P2 > 
+< float
+> Player 2 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     004 004 005 rations
+> 
+? P3 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - WEST
+> - PIRAT - Pirate - SOUTH
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - WEST
+> - MSSGE - Message in a Bottle - WEST
+> - LOSTS - Lost at Sea - NORTH
+> - RWAVE - Rogue Wave - EAST
+? P3 > 
+< float
+> Player 3 floats in place.
+> 
+>  5 |   |   |   |
+>  4 |P01|P02|P03|
+>  3 | W | W | W |
+>  2 | W | W | W |
+>  1 | W | W | W |
+>      1   2   3  
+>     004 004 004 rations
+> 
+? P1 > 
+< quit

@@ -1,0 +1,108 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< hand
+> Hand cards:
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - NORTH
+> - LOSTS - Lost at Sea - WEST
+> - LOSTS - Lost at Sea - WEST
+? P1 > 
+< deck ocean
+> Cards of the ocean deck:
+> - Calm Waters - NO SHARK
+> - Ocean Debris - NO SHARK
+> - Island Calling - NO SHARK
+> - Kraken - NO SHARK
+> - Calm Waters - SHARK
+> - Ocean Debris - NO SHARK
+> - Island Calling - SHARK
+> - Kraken - NO SHARK
+> - Calm Waters - NO SHARK
+> - Ocean Debris - NO SHARK
+? P1 > 
+< deck action
+> Cards of the action deck:
+> - Message in a Bottle - NORTH
+> - Pirate - SOUTH
+> - Rogue Wave - EAST
+? P1 > 
+< float
+> Player 1 floats in place.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     011 012 rations
+> 
+? P2 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - PIRAT - Pirate - SOUTH
+> - MSSGE - Message in a Bottle - NORTH
+> - RWAVE - Rogue Wave - EAST
+? P2 > 
+< action pirat 1
+> Select target hand card:
+? P2 > 
+< 2
+> [🔥] Played Pirate - Stole another player's hand card!
+? P2 > 
+< hand
+> Hand cards:
+> - RWAVE - Rogue Wave - EAST
+> - MSSGE - Message in a Bottle - NORTH
+> - RWAVE - Rogue Wave - EAST
+> - MSSGE - Message in a Bottle - NORTH
+? P2 > 
+< action mssge 1
+> [🔥] Played Message in a Bottle - Stole up to 2 rations!
+? P2 > 
+< swim
+> Player 2 swims closer to safety.
+> [🌊] Drew Ocean Debris - Gained a new action card!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |P02|
+>  1 |P01| D |
+>      1   2  
+>     009 012 rations
+> 
+? P1 > 
+< swim
+> Player 1 swims closer to safety.
+> [🌊] Drew Calm Waters - The sea is calm, nothing happened.
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|P02|
+>  1 | W | D |
+>      1   2  
+>     007 012 rations
+> 
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |P01|P02|
+>  1 | W | D |
+>      1   2  
+>     007 012 rations
+> 
+> 
+> Beaten by the whims of the sea, the game ends in a draw... Better luck next time.

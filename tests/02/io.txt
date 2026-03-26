@@ -1,0 +1,54 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< deckk
+> [❌] Entered command not found!
+? P1 > 
+< deck
+> [❌] Wrong number of parameters for this command!
+? P1 > 
+< deck hello 
+> [❌] Invalid card deck type!
+? P1 > 
+< deck        oCeAn        
+> Cards of the ocean deck:
+> - Ocean Debris - SHARK
+> - Ocean Debris - SHARK
+> - Island Calling - NO SHARK
+> - Kraken - NO SHARK
+> - Calm Waters - SHARK
+> - Calm Waters - NO SHARK
+> - Island Calling - SHARK
+> - Kraken - NO SHARK
+> - Island Calling - SHARK
+> - Ocean Debris - NO SHARK
+> - Island Calling - NO SHARK
+> - Kraken - SHARK
+? P1 > 
+< deck actionn
+> [❌] Invalid card deck type!
+? P1 > 
+< deck ACtion
+> Cards of the action deck:
+> - Lost at Sea - NORTH
+> - Pirate - SOUTH
+> - Rogue Wave - EAST
+> - Rogue Wave - WEST
+> - Message in a Bottle - NORTH
+> - Pirate - SOUTH
+> - Message in a Bottle - EAST
+> - Lost at Sea - WEST
+> - Message in a Bottle - NORTH
+> - Message in a Bottle - SOUTH
+> - Rogue Wave - EAST
+> - Lost at Sea - EAST
+? P1 > 
+< quit

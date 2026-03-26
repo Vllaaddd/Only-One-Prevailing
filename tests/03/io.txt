@@ -1,0 +1,65 @@
+> Welcome to Only One Prevailing!
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< hAnDD    
+> [❌] Entered command not found!
+? P1 > 
+<       hAnD                
+> Hand cards:
+> - MSSGE - Message in a Bottle - NORTH
+> - LOSTS - Lost at Sea - WEST
+> - MSSGE - Message in a Bottle - EAST
+> - RWAVE - Rogue Wave - EAST
+? P1 > 
+< hand hand
+> [❌] Wrong number of parameters for this command!
+? P1 > 
+< board print
+> [❌] Wrong number of parameters for this command!
+? P1 > 
+<              BOARD                 
+? P1 > 
+< bo ard
+> [❌] Entered command not found!
+? P1 > 
+< board
+> 
+>  5 |   |   |
+>  4 |   |   |
+>  3 |   |   |
+>  2 |   |   |
+>  1 |P01|P02|
+>      1   2  
+>     012 012 rations
+> 
+? P1 > 
+< board
+? P1 > 
+< float p1
+> [❌] Wrong number of parameters for this command!
+? P1 > 
+< FLOAT
+> Player 1 floats in place.
+? P2 > 
+< hand
+> Hand cards:
+> - MSSGE - Message in a Bottle - SOUTH
+> - MSSGE - Message in a Bottle - NORTH
+> - RWAVE - Rogue Wave - WEST
+> - PIRAT - Pirate - NORTH
+? P2 > 
+<      qu     it
+> [❌] Entered command not found!
+? P2 > 
+< quit game
+> [❌] Wrong number of parameters for this command!
+? P2 > 
+<       QUit           
