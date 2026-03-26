@@ -30,7 +30,7 @@ class ActionCard: public Card{
         ActionCard(const ActionCard&) = delete;
         ~ActionCard() = default;
 
-        void printInformationString(std::vector<Card *> deck) override;
+        void printInformationString(Card* card) override;
         void printPlayMessage() override;
         virtual void play() override;
 };

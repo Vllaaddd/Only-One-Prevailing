@@ -20,7 +20,7 @@ class OceanCard: public Card{
         OceanCard(const OceanCard&) = delete;
         ~OceanCard() = default;
 
-        void printInformationString(std::vector<Card *> deck) override;
+        void printInformationString(Card* card) override;
         void printPlayMessage() override;
         void play() override;
 };

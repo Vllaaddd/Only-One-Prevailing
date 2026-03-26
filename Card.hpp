@@ -17,7 +17,7 @@ class Card{
         Card(const Card&) = delete;
         ~Card() = default;
 
-        virtual void printInformationString(std::vector<Card *> deck) = 0;
+        virtual void printInformationString(Card* card) = 0;
         virtual void printPlayMessage() = 0;
         virtual void play() = 0;
 

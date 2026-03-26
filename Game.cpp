@@ -162,8 +162,20 @@ bool Game::executeCommand(Command &command){
         board_.togglePrint();
         return true;
     }if(command.getType() == CommandType::DECK){
-        std::string deck_type = command.getParameters()[1];
+        std::string deck_type = command.getParameters()[0];
         Utils::toLowerCase(deck_type);
+        if(deck_type == "action"){
+            std::cout << "Cards of the action deck:" << std::endl;
+            for(auto card : action_deck_){
+                card->printInformationString(card);
+            }
+        }else{
+            std::cout << "Cards of the ocean deck:" << std::endl;
+            for(auto card : ocean_deck_){
+                card->printInformationString(card);
+            }
+        }
+        
     }
     return false;
 }

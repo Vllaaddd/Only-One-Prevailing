@@ -3,20 +3,20 @@
 Card::Card(std::string &id):
     id_(id), owner_(nullptr) {
         if(id == "DBRIS"){
-            name_ = "OCEAN_DEBRIS";
+            name_ = "Ocean Debris";
         }else if(id == "ISLND"){
-            name_ = "ISLAND_CALLING";
+            name_ = "Island Calling";
         }else if(id == "KRKEN"){
-            name_ = "KRAKEN";
+            name_ = "Kraken";
         }else if(id == "WATER"){
-            name_ = "CALM_WATERS";
+            name_ = "Calm Waters";
         }else if(id == "MSSGE"){
-            name_ = "MESSAGE_IN_A_BOTTLE";
+            name_ = "Message in a Bottle";
         }else if(id == "RWAVE"){
-            name_ = "ROGUE_WAVE";
+            name_ = "Rogue Wave";
         }else if(id == "PIRAT"){
-            name_ = "PIRATE";
+            name_ = "Pirate";
         }else if(id == "LOSTS"){
-            name_ = "LOST_AT_SEA";
+            name_ = "Lost At Sea";
         };
 }
