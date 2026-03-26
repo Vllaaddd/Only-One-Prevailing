@@ -17,6 +17,6 @@ Card::Card(std::string &id):
         }else if(id == "PIRAT"){
             name_ = "Pirate";
         }else if(id == "LOSTS"){
-            name_ = "Lost At Sea";
+            name_ = "Lost at Sea";
         };
 }

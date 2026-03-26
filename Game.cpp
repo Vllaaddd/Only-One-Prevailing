@@ -155,6 +155,7 @@ bool Game::validateCommand(Command &command){
 }
 
 bool Game::executeCommand(Command &command){
+    Player* player = players_[current_player_index_ - 1];
     if(command.getType() == CommandType::QUIT){
         is_running_ = false;
         return true;
@@ -175,7 +176,12 @@ bool Game::executeCommand(Command &command){
                 card->printInformationString(card);
             }
         }
-        
+    }else if(command.getType() == CommandType::HAND){
+        std::vector<ActionCard*> cards = player->getHandCards();
+        std::cout << "Hand cards:" << std::endl;
+        for(auto card : cards){
+            card->printInformationString(card);
+        }
     }
     return false;
 }
