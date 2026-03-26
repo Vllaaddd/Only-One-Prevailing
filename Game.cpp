@@ -179,8 +179,12 @@ bool Game::executeCommand(Command &command){
     }else if(command.getType() == CommandType::HAND){
         std::vector<ActionCard*> cards = player->getHandCards();
         std::cout << "Hand cards:" << std::endl;
-        for(auto card : cards){
-            card->printInformationString(card);
+        if(cards.empty()){
+            std::cout << "No hand cards to display." << std::endl;
+        }else{
+            for(auto card : cards){
+                card->printInformationString(card);
+            }
         }
     }
     return false;
