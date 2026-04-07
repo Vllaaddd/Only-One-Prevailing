@@ -2,6 +2,8 @@
 #define OCEANCARD_HPP
 
 #include "Card.hpp"
+#include "Utils.hpp"
+#include "Player.hpp"
 #include <iostream>
 
 enum class OceanCardType{
@@ -23,6 +25,8 @@ class OceanCard: public Card{
         void printInformationString(Card* card) override;
         void printPlayMessage() override;
         void play() override;
+
+        bool getSharkIcon() const;
 };
 
 #endif

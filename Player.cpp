@@ -10,6 +10,17 @@ Player::~Player() {
 };
 
 bool Player::move(CompassDirection movement_direction){
+
+    std::size_t y = coordinates_->getY();
+    std::size_t x = coordinates_->getX();
+
+    if(movement_direction == CompassDirection::NORTH){
+        y++;
+    }else if(movement_direction == CompassDirection::SOUTH){
+        y--;
+    }
+    
+    coordinates_.emplace(x, y);
     return true;
 }
 
@@ -27,4 +38,9 @@ std::vector<ActionCard *> &Player::getHandCards(){
 
 std::size_t Player::getId() const {
     return id_;
+}
+
+std::size_t Player::setRations(std::size_t rations){
+    rations_ = rations;
+    return rations_;
 }

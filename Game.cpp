@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include <windows.h>
 
 Game::Game(std::size_t player_count):
     board_(player_count), shark_(new Shark()), is_running_(true){
@@ -69,12 +70,16 @@ void Game::loadConfigFile(std::string &config_file_path){
         }
     }
 
+    //Code from Github Copilot, beginning:
     for (auto* player : players_) {
         for (int i = 0; i < 3; i++) {
-            player->getHandCards().push_back(action_deck_.front());
+            ActionCard* card = action_deck_.front();
+            card->setOwner(player);
+            player->getHandCards().push_back(card);
             action_deck_.erase(action_deck_.begin());
         }
     }
+    //end
 }
 
 Player* Game::getNextPlayer(){
@@ -132,19 +137,19 @@ bool Game::validateCommand(Command &command){
                 command_line_.printErrorMessage(ErrorType::HAND_CARDS_EMPTY);
                 return false;
             }
-        }else{
-            std::vector<ActionCard *> player_cards = player->getHandCards();
-            for(int i = 0; i < player_cards.size(); i++){
-
-                std::string card = player_cards[i]->getId();
-                Utils::toLowerCase(card);
-                if(card_name == card){
-                    return true;
-                }
-            }
-            command_line_.printErrorMessage(ErrorType::ACTION_CARD_NOT_IN_HAND);
-            return false;
         }
+
+        std::vector<ActionCard *> player_cards = player->getHandCards();
+        for(int i = 0; i < player_cards.size(); i++){
+            std::string card = player_cards[i]->getId();
+            Utils::toLowerCase(card);
+            if(card_name == card){
+                return true;
+            }
+        }
+
+        command_line_.printErrorMessage(ErrorType::ACTION_CARD_NOT_IN_HAND);
+        return false;
     }else if(command.getType() == CommandType::SWIM){
         if(player->getRations() < 2){
             command_line_.printErrorMessage(ErrorType::INSUFFICIENT_RATIONS);
@@ -154,7 +159,7 @@ bool Game::validateCommand(Command &command){
     return true;
 }
 
-bool Game::executeCommand(Command &command){
+bool Game::executeCommand(Command &command, std::size_t target_hand_index){
     Player* player = players_[current_player_index_ - 1];
     if(command.getType() == CommandType::QUIT){
         is_running_ = false;
@@ -170,34 +175,152 @@ bool Game::executeCommand(Command &command){
             for(auto card : action_deck_){
                 card->printInformationString(card);
             }
+            return true;
         }else{
             std::cout << "Cards of the ocean deck:" << std::endl;
             for(auto card : ocean_deck_){
                 card->printInformationString(card);
             }
+            return true;
         }
     }else if(command.getType() == CommandType::HAND){
         std::vector<ActionCard*> cards = player->getHandCards();
         std::cout << "Hand cards:" << std::endl;
         if(cards.empty()){
             std::cout << "No hand cards to display." << std::endl;
+            return true;
         }else{
             for(auto card : cards){
                 card->printInformationString(card);
             }
+            return true;
         }
+    }else if(command.getType() == CommandType::ACTION){
+        std::string card_name = command.getParameters()[0];
+        int target_player_id;
+        Utils::stringToInt(command.getParameters()[1], target_player_id);
+        Utils::toLowerCase(card_name);
+        auto& cards = player->getHandCards();
+        // Code from Github Copilot, begining:
+        for(int i = 0; i < cards.size(); i++){
+            std::string card_id = cards[i]->getId();
+            Utils::toLowerCase(card_id);
+            if(card_name == card_id){
+                if(card_name == "pirat" || card_name == "losts"){
+                    HandActionCard* hand_card = dynamic_cast<HandActionCard*>(cards[i]);
+                    if(hand_card){
+                        hand_card->setTargetHandIndex(target_hand_index);
+                    }
+                }
+                cards[i]->setTargetPlayer(players_[target_player_id - 1]);
+                cards[i]->printPlayMessage();
+                cards[i]->play();
+                cards.erase(cards.begin() + i);
+                break;
+            }
+        }
+        //end
+    }else if(command.getType() == CommandType::SWIM){
+        player->move(CompassDirection::NORTH);
+        std::cout << "Player " << player->getId() << " swims closer to safety." << std::endl;
+
+        if(player->getCoordinates()->getY() == 5){
+            std::cout << "Congratulations player " << player->getId() << ", you are the Only One Prevailing!" << std::endl;
+            is_running_ = false;
+        }
+
+        if(ocean_deck_.size() == 1){
+            std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
+            is_running_ = false;
+        }else{
+            OceanCard* ocean_card = ocean_deck_.back();
+            ocean_deck_.pop_back();
+
+            ocean_card->printPlayMessage();
+            ocean_card->setOwner(player);
+            ocean_card->play();
+
+            Coordinates coordinates = player->getCoordinates().value();
+            if(ocean_card->getId() == "islnd"){
+                coordinates = Coordinates(coordinates.getX(), coordinates.getY() + 1);
+                board_.placeOceanCard(ocean_card, coordinates);
+            }else{
+                board_.placeOceanCard(ocean_card, coordinates);
+            }
+            
+            player->setRations(player->getRations() - 2);
+
+            if(ocean_card->getSharkIcon()){
+                if(shark_->isActive()){
+                    std::cout << "[" << UNICODE_SHARK << "] " << "Oh no, the shark is looking for food!" << std::endl;
+
+                    std::vector<CompassDirection> shark_path;
+                    for(auto* player: players_){
+                        if(!player->hasStarved() && !player->getHandCards().empty()){
+                            target_hand_index = command_line_.getTargetHandCardIndex(*player, *player);
+                            ActionCard* selected_card = player->getHandCards()[target_hand_index];
+                            CompassDirection shark_direction = selected_card->getSharkDirection();
+                            shark_path.push_back(shark_direction);
+                            shark_->move(shark_direction);
+
+                            Coordinates shark_coordinates = shark_->getCoordinates().value();
+                            Coordinates player_coordinates = player->getCoordinates().value();
+                            if(player_coordinates.getX() == shark_coordinates.getX() && player_coordinates.getY() == shark_coordinates.getY()){
+                                std::cout << "[" << UNICODE_SHARK << "] " << "The shark caught player " << player->getId() << "!" << std::endl;
+                            }
+                        }
+                    }
+                    std::cout << "[" << UNICODE_SHARK << "] " << "The shark will move along the path [";
+                    for(CompassDirection direction : shark_path){
+                        if(direction == CompassDirection::NORTH){
+                            std::cout << " N";
+                        }else if(direction == CompassDirection::SOUTH){
+                            std::cout << " S";
+                        }else if(direction == CompassDirection::WEST){
+                            std::cout << " W";
+                        }else if(direction == CompassDirection::EAST){
+                            std::cout << " E";
+                        }
+                    }
+                    std::cout << " ] swiftly!" << std::endl;
+                }else{
+                    std::cout << "[" << UNICODE_SHARK << "] " << "The shark smells food and approaches the players..." << std::endl;
+                    if(player->getCoordinates()->getY() == 1){
+                        shark_->setCoordinates(player->getCoordinates()->getX(), 1);
+                    }else{
+                        shark_->setCoordinates(player->getCoordinates()->getX(), player->getCoordinates()->getY() - 1);
+                    }
+                    shark_->setTerritoryWidth(players_.size());
+                }
+            }
+        }
+        return true;
+    }else if(command.getType() == CommandType::FLOAT){
+        std::cout << "Player " << player->getId() << " floats in place." << std::endl;
+        player->setRations(player->getRations() - 1);
+        return true;
     }
     return false;
 }
 
 void Game::start(){
-    std::cout << "Game started!" << std::endl;
-
+    SetConsoleOutputCP(CP_UTF8);
     while(is_running_){
         Player* current_player = getNextPlayer();
         if(current_player == nullptr){
             std::cout << "All players have starved! Game over!" << std::endl;
             is_running_ = false;
+            break;
+        }
+
+        if(action_deck_.size() > 1){
+            ActionCard* last_deck_card = action_deck_.back();
+            last_deck_card->setOwner(current_player);
+            current_player->getHandCards().push_back(last_deck_card);
+            action_deck_.pop_back();
+        }else{
+            is_running_ = false;
+            std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             break;
         }
 
@@ -209,15 +332,23 @@ void Game::start(){
             Command command = command_line_.getCommand();
 
             if(validateCommand(command)){
-                executeCommand(command);
-                if(is_running_ == false){
+                std::size_t target_hand_index = 0;
+                if(command.getType() == CommandType::ACTION){
+                    std::string card_name = command.getParameters()[0];
+                    Utils::toLowerCase(card_name);
+
+                    if(card_name == "pirat" || card_name == "losts"){
+                        int target_player_id;
+                        Utils::stringToInt(command.getParameters()[1], target_player_id);
+                        Player* target_player = players_[target_player_id - 1];
+                        target_hand_index = command_line_.getTargetHandCardIndex(*current_player, *target_player);
+                    }
+                }
+                executeCommand(command, target_hand_index);
+
+                if(!is_running_ || command.getType() == CommandType::SWIM || command.getType() == CommandType::FLOAT){
                     break;
                 }
-            }
-            
-
-            if(command.getType() == CommandType::SWIM || command.getType() == CommandType::FLOAT){
-                break;
             }
         }
     }

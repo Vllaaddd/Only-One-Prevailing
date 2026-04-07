@@ -25,6 +25,8 @@ class Player: public Entity{
         std::size_t getRations() const {
             return rations_;
         }
+
+        std::size_t setRations(std::size_t rations);
 };
 
 #endif

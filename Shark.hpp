@@ -16,6 +16,8 @@ class Shark: public Entity{
         bool move(CompassDirection movement_direction) override;
         bool isActive();
         void play(Player &current_player, std::vector<Player *> &players, std::vector<CompassDirection> &shark_path);
+
+        void setTerritoryWidth(std::size_t width);
 };
 
 #endif

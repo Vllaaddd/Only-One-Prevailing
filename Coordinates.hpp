@@ -13,13 +13,8 @@ class Coordinates{
         Coordinates(const Coordinates&) = default;
         ~Coordinates() = default;
 
-        std::size_t getX() const {
-            return x_;
-        }
-
-        std::size_t getY() const {
-            return y_;
-        }
+        std::size_t getX() const;
+        std::size_t getY() const;
 };
 
 #endif

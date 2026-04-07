@@ -2,6 +2,7 @@
 #define HAND_ACTION_CARD_HPP
 
 #include "ActionCard.hpp"
+#include "Player.hpp"
 #include <optional>
 
 class HandActionCard: public ActionCard{
@@ -14,6 +15,8 @@ class HandActionCard: public ActionCard{
         ~HandActionCard() = default;
 
         void play() override;
+
+        void setTargetHandIndex(std::size_t index);
 };
 
 #endif

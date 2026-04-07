@@ -7,7 +7,7 @@
 class Player;
 
 class Card{
-    private:
+    protected:
         std::string id_;
         std::string name_;
         Player* owner_;
@@ -21,13 +21,11 @@ class Card{
         virtual void printPlayMessage() = 0;
         virtual void play() = 0;
 
-        std::string getId() const{
-            return id_;
-        }
+        std::string getId() const;
+        std::string getName() const;
 
-        std::string getName() const{
-            return name_;
-        }
+        Player* getOwner() const;
+        void setOwner(Player* player);
                 
 };
 

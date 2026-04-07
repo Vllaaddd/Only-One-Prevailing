@@ -20,3 +20,19 @@ Card::Card(std::string &id):
             name_ = "Lost at Sea";
         };
 }
+
+std::string Card::getId() const{
+    return id_;
+}
+
+std::string Card::getName() const{
+    return name_;
+}
+
+Player* Card::getOwner() const{
+    return owner_;
+}
+
+void Card::setOwner(Player* player){
+    owner_ = player;
+}

@@ -2,6 +2,7 @@
 #define ACTIONCARD_HPP
 
 #include "Card.hpp"
+#include "Utils.hpp"
 #include <vector>
 #include <iostream>
 #include <map>
@@ -21,9 +22,9 @@ enum class CompassDirection{
 };
 
 class ActionCard: public Card{
-    private:
+    protected:
         CompassDirection shark_direction_;
-        Player * target_player_;
+        Player* target_player_;
     
     public:
         ActionCard(std::string &id, CompassDirection shark_direction);
@@ -33,6 +34,9 @@ class ActionCard: public Card{
         void printInformationString(Card* card) override;
         void printPlayMessage() override;
         virtual void play() override;
+
+        void setTargetPlayer(Player* target);
+        CompassDirection getSharkDirection() const;
 };
 
 #endif

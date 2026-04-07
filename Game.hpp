@@ -30,7 +30,7 @@ class Game{
         void loadConfigFile(std::string &config_file_path);
         Player* getNextPlayer();
         bool validateCommand(Command &command);
-        bool executeCommand(Command &command);
+        bool executeCommand(Command &command, std::size_t target_hand_index);
         void start();
 };
 

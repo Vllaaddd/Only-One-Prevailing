@@ -13,3 +13,9 @@ bool Entity::move(CompassDirection movement_direction){
 std::optional<Coordinates> Entity::getCoordinates() const{
     return coordinates_;
 }
+
+// Code from Github Copilot, beginning:
+void Entity::setCoordinates(std::size_t x, std::size_t y){
+    coordinates_.emplace(x, y);
+}
+//end

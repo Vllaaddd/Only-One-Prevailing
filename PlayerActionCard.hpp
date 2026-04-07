@@ -2,6 +2,7 @@
 #define PLAYERACTIONCARD_HPP
 
 #include "ActionCard.hpp"
+#include "Utils.hpp"
 
 class PlayerActionCard: public ActionCard{
     public:

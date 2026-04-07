@@ -11,7 +11,7 @@ enum class EntityType{
 };
 
 class Entity{
-    private:
+    protected:
         EntityType type_;
         std::optional<Coordinates> coordinates_;
 
@@ -22,6 +22,7 @@ class Entity{
         ~Entity() = default;
 
         std::optional<Coordinates> getCoordinates() const;
+        void setCoordinates(std::size_t x, std::size_t y);
 
         virtual bool move(CompassDirection movement_direction);
 };
