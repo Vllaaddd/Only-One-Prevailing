@@ -24,7 +24,7 @@ class Game{
     public:
         Game(std::size_t player_count);
         Game(const Game&) = delete;
-        ~Game() = default;
+        ~Game();
 
         bool checkMagicNumber(std::string &config_file_path);
         void loadConfigFile(std::string &config_file_path);
