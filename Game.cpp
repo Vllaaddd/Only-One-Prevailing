@@ -204,7 +204,13 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
             return true;
         }else{
             for(auto card : cards){
-                card->printInformationString(card);
+                std::map<CompassDirection, std::string> directions = {
+                    {CompassDirection::NORTH, "NORTH"},
+                    {CompassDirection::EAST, "EAST"},
+                    {CompassDirection::SOUTH, "SOUTH"},
+                    {CompassDirection::WEST, "WEST"}
+                };
+                std::cout << "- " << card->getId() << " - " << card->getName() << " - " << directions[card->getSharkDirection()] << std::endl;
             }
             return true;
         }
