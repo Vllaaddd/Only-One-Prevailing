@@ -12,7 +12,6 @@ Board::~Board() {
     for (auto &column : card_slots_) {
         for (auto &card_ptr : column) {
             delete card_ptr;
-            card_ptr = nullptr;
         }
     }
 }
@@ -44,7 +43,7 @@ void Board::print(std::vector<Player *> &players, Shark *shark) {
                         auto player_x = coordinates->getX();
                         auto player_y = coordinates->getY();
                         auto id = player->getId();
-                        if(player_x == j && player_y == i && !cell_printed){
+                        if(player_x == j && player_y == i && !cell_printed  && !player->hasStarved()){
                             std::cout << "|PO" << id;
                             cell_printed = true;
                             break;
@@ -77,8 +76,10 @@ void Board::print(std::vector<Player *> &players, Shark *shark) {
             auto rations = player->getRations();
             if(rations >= 10){
                std::cout << " 0" << rations; 
-            }else{
+            }else if(rations > 0){
                 std::cout << " 00" << rations;
+            }else{
+                std::cout << " 000";
             }
         }
 

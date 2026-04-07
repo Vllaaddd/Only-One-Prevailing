@@ -8,6 +8,19 @@ Game::Game(std::size_t player_count):
         }
 }
 
+Game::~Game(){
+    for(auto* player: players_){
+        delete player;
+    }
+    for(auto* card : action_deck_){
+        delete card;
+    }
+    for(auto* card : ocean_deck_){
+        delete card;
+    }
+    delete shark_;
+}
+
 bool Game::checkMagicNumber(std::string &config_file_path){
     std::fstream config_file(config_file_path);
     if(!config_file.is_open()){
@@ -73,10 +86,10 @@ void Game::loadConfigFile(std::string &config_file_path){
     //Code from Github Copilot, beginning:
     for (auto* player : players_) {
         for (int i = 0; i < 3; i++) {
-            ActionCard* card = action_deck_.front();
+            ActionCard* card = action_deck_.back();
             card->setOwner(player);
             player->getHandCards().push_back(card);
-            action_deck_.erase(action_deck_.begin());
+            action_deck_.pop_back();
         }
     }
     //end
@@ -225,11 +238,14 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
         std::cout << "Player " << player->getId() << " swims closer to safety." << std::endl;
 
         if(player->getCoordinates()->getY() == 5){
+            board_.print(players_, shark_);
             std::cout << "Congratulations player " << player->getId() << ", you are the Only One Prevailing!" << std::endl;
             is_running_ = false;
+            return true;
         }
 
         if(ocean_deck_.size() == 1){
+            board_.print(players_, shark_);
             std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             is_running_ = false;
         }else{
@@ -248,13 +264,23 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                 board_.placeOceanCard(ocean_card, coordinates);
             }
             
-            player->setRations(player->getRations() - 2);
+            if(player->getRations() > 1){
+                player->setRations(player->getRations() - 2);
+            }else if(player->getRations() == 1){
+                player->setRations(0);
+            }
+
+            if(player->hasStarved()){
+                std::cout << "Oh no, Player " << player->getId() << " has starved!" << std::endl;
+                return true;
+            }
 
             if(ocean_card->getSharkIcon()){
                 if(shark_->isActive()){
                     std::cout << "[" << UNICODE_SHARK << "] " << "Oh no, the shark is looking for food!" << std::endl;
 
                     std::vector<CompassDirection> shark_path;
+                    int shark_eat_times = 0;
                     for(auto* player: players_){
                         if(!player->hasStarved() && !player->getHandCards().empty()){
                             target_hand_index = command_line_.getTargetHandCardIndex(*player, *player);
@@ -266,7 +292,8 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                             Coordinates shark_coordinates = shark_->getCoordinates().value();
                             Coordinates player_coordinates = player->getCoordinates().value();
                             if(player_coordinates.getX() == shark_coordinates.getX() && player_coordinates.getY() == shark_coordinates.getY()){
-                                std::cout << "[" << UNICODE_SHARK << "] " << "The shark caught player " << player->getId() << "!" << std::endl;
+                                shark_->play(*player, players_, shark_path);      
+                                shark_eat_times++;                 
                             }
                         }
                     }
@@ -283,6 +310,9 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                         }
                     }
                     std::cout << " ] swiftly!" << std::endl;
+                    for(int i = 0; i < shark_eat_times; i++){
+                        std::cout << "[" << UNICODE_SHARK << "] " << " Yum, the shark was given a ration to eat!" << std::endl;
+                    }
                 }else{
                     std::cout << "[" << UNICODE_SHARK << "] " << "The shark smells food and approaches the players..." << std::endl;
                     if(player->getCoordinates()->getY() == 1){
@@ -297,7 +327,14 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
         return true;
     }else if(command.getType() == CommandType::FLOAT){
         std::cout << "Player " << player->getId() << " floats in place." << std::endl;
-        player->setRations(player->getRations() - 1);
+        if(player->getRations() > 0){
+            player->setRations(player->getRations() - 1);
+        }
+
+        if(player->hasStarved()){
+            std::cout << "Oh no, Player " << player->getId() << " has starved!" << std::endl;
+            return true;
+        }
         return true;
     }
     return false;
@@ -319,6 +356,7 @@ void Game::start(){
             current_player->getHandCards().push_back(last_deck_card);
             action_deck_.pop_back();
         }else{
+            board_.print(players_, shark_);
             is_running_ = false;
             std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             break;

@@ -14,6 +14,10 @@ void PlayerActionCard::play(){
             target_player_->setRations(target_player_->getRations() - 1);
             owner_->setRations(owner_->getRations() + 1);
         }
+
+        if(target_player_->hasStarved()){
+            std::cout << "Oh no, Player " << target_player_->getId() << " has starved!" << std::endl;
+        }
     }if(id_ == "rwave"){
         std::optional<Coordinates> target_player_coordinates = target_player_->getCoordinates();
         if(target_player_coordinates->getY() > 1){

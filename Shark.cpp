@@ -1,4 +1,5 @@
 #include "Shark.hpp"
+#include "Player.hpp"
 
 Shark::Shark():
     Entity(EntityType::SHARK) {}
@@ -37,7 +38,9 @@ bool Shark::isActive(){
 }
 
 void Shark::play(Player &current_player, std::vector<Player *> &players, std::vector<CompassDirection> &shark_path){
-
+    if(current_player.getRations() > 0){
+        current_player.setRations(current_player.getRations() - 1);
+    }
 }
 
 void Shark::setTerritoryWidth(std::size_t width){
