@@ -29,7 +29,7 @@ class ActionCard: public Card{
     public:
         ActionCard(std::string &id, CompassDirection shark_direction);
         ActionCard(const ActionCard&) = delete;
-        ~ActionCard() = default;
+        virtual ~ActionCard() = default;
 
         void printInformationString(Card* card) override;
         void printPlayMessage() override;

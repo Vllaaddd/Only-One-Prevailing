@@ -1,7 +1,7 @@
 #include "Player.hpp"
 
 Player::Player(std::size_t id):
-    id_(id), rations_(12), hand_cards_(), Entity(EntityType::PLAYER, id, 1) {}
+    Entity(EntityType::PLAYER, id, 1), id_(id), hand_cards_(), rations_(12) {}
 
 Player::~Player() {
     for(ActionCard *card : hand_cards_){

@@ -41,6 +41,10 @@ void Shark::play(Player &current_player, std::vector<Player *> &players, std::ve
     if(current_player.getRations() > 0){
         current_player.setRations(current_player.getRations() - 1);
     }
+    //Code from ChatGPT, beginning:
+    (void)players;
+    (void)shark_path;
+    //end
 }
 
 void Shark::setTerritoryWidth(std::size_t width){

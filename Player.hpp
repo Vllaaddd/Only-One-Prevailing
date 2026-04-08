@@ -15,7 +15,7 @@ class Player: public Entity{
     public:
         Player(std::size_t id);
         Player(const Player&) = delete;
-        ~Player();
+        virtual ~Player();
 
         bool move(CompassDirection movement_direction) override;
         bool hasStarved();

@@ -20,7 +20,7 @@ class OceanCard: public Card{
     public:
         OceanCard(std::string &id, bool shark_icon);
         OceanCard(const OceanCard&) = delete;
-        ~OceanCard() = default;
+        virtual ~OceanCard() = default;
 
         void printInformationString(Card* card) override;
         void printPlayMessage() override;

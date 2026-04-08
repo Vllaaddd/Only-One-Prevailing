@@ -11,7 +11,7 @@ class Shark: public Entity{
     public:
         Shark();
         Shark(const Shark& ) = delete;
-        ~Shark() = default;
+        virtual ~Shark() = default;
 
         bool move(CompassDirection movement_direction) override;
         bool isActive();

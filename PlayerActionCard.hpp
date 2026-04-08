@@ -8,7 +8,7 @@ class PlayerActionCard: public ActionCard{
     public:
         PlayerActionCard(std::string &id, CompassDirection shark_direction);
         PlayerActionCard(const PlayerActionCard&) = delete;
-        ~PlayerActionCard() = default;
+        virtual ~PlayerActionCard() = default;
 
         void play() override;
 };

@@ -12,7 +12,7 @@ class HandActionCard: public ActionCard{
     public:
         HandActionCard(std::string &id, CompassDirection shark_direction);
         HandActionCard(const HandActionCard&) = delete;
-        ~HandActionCard() = default;
+        virtual ~HandActionCard() = default;
 
         void play() override;
 

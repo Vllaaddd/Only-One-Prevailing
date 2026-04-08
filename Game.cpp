@@ -1,9 +1,8 @@
 #include "Game.hpp"
-#include <windows.h>
 
 Game::Game(std::size_t player_count):
     board_(player_count), shark_(new Shark()), is_running_(true){
-        for(int i = 1; i <= player_count; i++){
+        for(std::size_t i = 1; i <= player_count; i++){
             players_.push_back(new Player(i));
         }
 }
@@ -96,7 +95,7 @@ void Game::loadConfigFile(std::string &config_file_path){
 }
 
 Player* Game::getNextPlayer(){
-    for(int i = 0; i < players_.size(); i++){
+    for(std::size_t i = 0; i < players_.size(); i++){
 
         if(current_player_index_ >= players_.size()){
             current_player_index_ = 0;
@@ -131,8 +130,8 @@ bool Game::validateCommand(Command &command){
     }else if(command.getType() == CommandType::ACTION){
         std::string card_name = command.getParameters()[0];
         Utils::toLowerCase(card_name);
-        int target_player_id;
-        Utils::stringToInt(command.getParameters()[1], target_player_id);
+        std::size_t target_player_id;
+        Utils::stringToSizeT(command.getParameters()[1], target_player_id);
         if(card_name != "mssge" && card_name != "pirat" && card_name != "rwave" && card_name != "losts"){
             command_line_.printErrorMessage(ErrorType::INVALID_ACTION_CARD);
             return false;
@@ -153,7 +152,7 @@ bool Game::validateCommand(Command &command){
         }
 
         std::vector<ActionCard *> player_cards = player->getHandCards();
-        for(int i = 0; i < player_cards.size(); i++){
+        for(std::size_t i = 0; i < player_cards.size(); i++){
             std::string card = player_cards[i]->getId();
             Utils::toLowerCase(card);
             if(card_name == card){
@@ -179,6 +178,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
         return true;
     }if(command.getType() == CommandType::BOARD){
         board_.togglePrint();
+        board_.print(players_, shark_);
         return true;
     }if(command.getType() == CommandType::DECK){
         std::string deck_type = command.getParameters()[0];
@@ -221,7 +221,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
         Utils::toLowerCase(card_name);
         auto& cards = player->getHandCards();
         // Code from Github Copilot, begining:
-        for(int i = 0; i < cards.size(); i++){
+        for(std::size_t i = 0; i < cards.size(); i++){
             std::string card_id = cards[i]->getId();
             Utils::toLowerCase(card_id);
             if(card_name == card_id){
@@ -245,6 +245,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
 
         if(player->getCoordinates()->getY() == 5){
             board_.print(players_, shark_);
+            std::cout << "" << std::endl;
             std::cout << "Congratulations player " << player->getId() << ", you are the Only One Prevailing!" << std::endl;
             is_running_ = false;
             return true;
@@ -252,6 +253,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
 
         if(ocean_deck_.size() == 1){
             board_.print(players_, shark_);
+            std::cout << "" << std::endl;
             std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             is_running_ = false;
         }else{
@@ -278,7 +280,6 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
 
             if(player->hasStarved()){
                 std::cout << "Oh no, Player " << player->getId() << " has starved!" << std::endl;
-                return true;
             }
 
             if(ocean_card->getSharkIcon()){
@@ -291,6 +292,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                         if(!player->hasStarved() && !player->getHandCards().empty()){
                             target_hand_index = command_line_.getTargetHandCardIndex(*player, *player);
                             ActionCard* selected_card = player->getHandCards()[target_hand_index];
+                            player->getHandCards().erase(player->getHandCards().begin() + target_hand_index);
                             CompassDirection shark_direction = selected_card->getSharkDirection();
                             shark_path.push_back(shark_direction);
                             shark_->move(shark_direction);
@@ -317,7 +319,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                     }
                     std::cout << " ] swiftly!" << std::endl;
                     for(int i = 0; i < shark_eat_times; i++){
-                        std::cout << "[" << UNICODE_SHARK << "] " << " Yum, the shark was given a ration to eat!" << std::endl;
+                        std::cout << "[" << UNICODE_SHARK << "]" << " Yum, the shark was given a ration to eat!" << std::endl;
                     }
                 }else{
                     std::cout << "[" << UNICODE_SHARK << "] " << "The shark smells food and approaches the players..." << std::endl;
@@ -347,14 +349,16 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
 }
 
 void Game::start(){
-    SetConsoleOutputCP(CP_UTF8);
     while(is_running_){
         Player* current_player = getNextPlayer();
+        
         if(current_player == nullptr){
             std::cout << "All players have starved! Game over!" << std::endl;
             is_running_ = false;
             break;
         }
+
+        board_.print(players_, shark_);
 
         if(action_deck_.size() > 1){
             ActionCard* last_deck_card = action_deck_.back();
@@ -364,11 +368,10 @@ void Game::start(){
         }else{
             board_.print(players_, shark_);
             is_running_ = false;
+            std::cout << "" << std::endl;
             std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             break;
         }
-
-        board_.print(players_, shark_);
 
         while(true){
 

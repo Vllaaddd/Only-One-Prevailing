@@ -28,7 +28,7 @@ Command::Command(std::vector<std::string> &input_tokens){
         type_ = CommandType::UNKNOWN;
     }
 
-    for(int i = 1; i < input_tokens.size(); i++){
+    for(std::size_t i = 1; i < input_tokens.size(); i++){
         parameters_.push_back(input_tokens[i]);
     }
 };

@@ -41,7 +41,7 @@ void OceanCard::play(){
                 CompassDirection shark_direction = owner_->getHandCards()[0]->getSharkDirection();
                 new_action_card = new HandActionCard(card_id, shark_direction);
             }
-        }else if(owner_->getRations() % 2 == 1){
+        }else{
             std::string card_id = "PIRAT";
             if(owner_->getHandCards().empty()){
                 new_action_card = new HandActionCard(card_id, CompassDirection::NORTH);
