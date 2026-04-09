@@ -130,7 +130,7 @@ bool Game::validateCommand(Command &command){
     }else if(command.getType() == CommandType::ACTION){
         std::string card_name = command.getParameters()[0];
         Utils::toLowerCase(card_name);
-        std::size_t target_player_id;
+        std::size_t target_player_id = 0;
         Utils::stringToSizeT(command.getParameters()[1], target_player_id);
         if(card_name != "mssge" && card_name != "pirat" && card_name != "rwave" && card_name != "losts"){
             command_line_.printErrorMessage(ErrorType::INVALID_ACTION_CARD);
@@ -176,11 +176,11 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
     if(command.getType() == CommandType::QUIT){
         is_running_ = false;
         return true;
-    }if(command.getType() == CommandType::BOARD){
+    }else if(command.getType() == CommandType::BOARD){
         board_.togglePrint();
         board_.print(players_, shark_);
         return true;
-    }if(command.getType() == CommandType::DECK){
+    }else if(command.getType() == CommandType::DECK){
         std::string deck_type = command.getParameters()[0];
         Utils::toLowerCase(deck_type);
         if(deck_type == "action"){
@@ -188,20 +188,18 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
             for(auto card : action_deck_){
                 card->printInformationString();
             }
-            return true;
         }else{
             std::cout << "Cards of the ocean deck:" << std::endl;
             for(auto card : ocean_deck_){
                 card->printInformationString();
             }
-            return true;
         }
+        return true;
     }else if(command.getType() == CommandType::HAND){
         std::vector<ActionCard*> cards = player->getHandCards();
         std::cout << "Hand cards:" << std::endl;
         if(cards.empty()){
             std::cout << "No hand cards to display." << std::endl;
-            return true;
         }else{
             for(auto card : cards){
                 std::map<CompassDirection, std::string> directions = {
@@ -212,8 +210,8 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                 };
                 std::cout << "- " << card->getId() << " - " << card->getName() << " - " << directions[card->getSharkDirection()] << std::endl;
             }
-            return true;
         }
+        return true;
     }else if(command.getType() == CommandType::ACTION){
         std::string card_name = command.getParameters()[0];
         int target_player_id;
@@ -240,6 +238,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
             }
         }
         //end
+        return true;
     }else if(command.getType() == CommandType::SWIM){
         player->move(CompassDirection::NORTH);
         std::cout << "Player " << player->getId() << " swims closer to safety." << std::endl;
@@ -275,7 +274,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
             
             if(player->getRations() > 1){
                 player->setRations(player->getRations() - 2);
-            }else if(player->getRations() == 1){
+            }else{
                 player->setRations(0);
             }
 
@@ -288,7 +287,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                     std::cout << "[" << UNICODE_SHARK << "] " << "Oh no, the shark is looking for food!" << std::endl;
 
                     std::vector<CompassDirection> shark_path;
-                    int shark_eat_times = 0;
+
                     for(auto* player: players_){
                         if(!player->hasStarved() && !player->getHandCards().empty()){
                             target_hand_index = command_line_.getTargetHandCardIndex(*player, *player);
@@ -296,33 +295,11 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                             player->getHandCards().erase(player->getHandCards().begin() + target_hand_index);
                             CompassDirection shark_direction = selected_card->getSharkDirection();
                             shark_path.push_back(shark_direction);
-                            shark_->move(shark_direction);
                             delete selected_card;
+                        }
+                    }
 
-                            Coordinates shark_coordinates = shark_->getCoordinates().value();
-                            Coordinates player_coordinates = player->getCoordinates().value();
-                            if(player_coordinates.getX() == shark_coordinates.getX() && player_coordinates.getY() == shark_coordinates.getY()){
-                                shark_->play(*player, players_, shark_path);      
-                                shark_eat_times++;                 
-                            }
-                        }
-                    }
-                    std::cout << "[" << UNICODE_SHARK << "] " << "The shark will move along the path [";
-                    for(CompassDirection direction : shark_path){
-                        if(direction == CompassDirection::NORTH){
-                            std::cout << " N";
-                        }else if(direction == CompassDirection::SOUTH){
-                            std::cout << " S";
-                        }else if(direction == CompassDirection::WEST){
-                            std::cout << " W";
-                        }else if(direction == CompassDirection::EAST){
-                            std::cout << " E";
-                        }
-                    }
-                    std::cout << " ] swiftly!" << std::endl;
-                    for(int i = 0; i < shark_eat_times; i++){
-                        std::cout << "[" << UNICODE_SHARK << "]" << " Yum, the shark was given a ration to eat!" << std::endl;
-                    }
+                    shark_->play(*player, players_, shark_path);
                 }else{
                     std::cout << "[" << UNICODE_SHARK << "] " << "The shark smells food and approaches the players..." << std::endl;
                     if(player->getCoordinates()->getY() == 1){

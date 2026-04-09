@@ -38,13 +38,43 @@ bool Shark::isActive(){
 }
 
 void Shark::play(Player &current_player, std::vector<Player *> &players, std::vector<CompassDirection> &shark_path){
-    if(current_player.getRations() > 0){
-        current_player.setRations(current_player.getRations() - 1);
+    int shark_eat_times = 0;
+
+    for(CompassDirection direction : shark_path){
+        move(direction);
+
+        for(auto* player : players){
+            if(!player->hasStarved()){
+                Coordinates player_coords = player->getCoordinates().value();
+                Coordinates shark_coords = this->getCoordinates().value();
+
+                if(player_coords.getX() == shark_coords.getX() && player_coords.getY() == shark_coords.getY()) {
+                    player->setRations(player->getRations() - 1);
+                    shark_eat_times++;
+                }
+            }
+        }
     }
-    //Code from ChatGPT, beginning:
-    (void)players;
-    (void)shark_path;
-    //end
+
+    std::cout << "[" << UNICODE_SHARK << "] " << "The shark will move along the path [";
+
+    for(CompassDirection direction : shark_path){
+        if(direction == CompassDirection::NORTH){
+            std::cout << " N";
+        }else if(direction == CompassDirection::SOUTH){
+            std::cout << " S";
+        }else if(direction == CompassDirection::WEST){
+            std::cout << " W";
+        }else if(direction == CompassDirection::EAST){
+            std::cout << " E";
+        }
+    }
+
+    std::cout << " ] swiftly!" << std::endl;
+
+    for(int i = 0; i < shark_eat_times; i++){
+        std::cout << "[" << UNICODE_SHARK << "]" << " Yum, the shark was given a ration to eat!" << std::endl;
+    }
 }
 
 void Shark::setTerritoryWidth(std::size_t width){

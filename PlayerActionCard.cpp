@@ -18,7 +18,7 @@ void PlayerActionCard::play(){
         if(target_player_->hasStarved()){
             std::cout << "Oh no, Player " << target_player_->getId() << " has starved!" << std::endl;
         }
-    }if(id_ == "rwave"){
+    }else if(id_ == "rwave"){
         std::optional<Coordinates> target_player_coordinates = target_player_->getCoordinates();
         if(target_player_coordinates->getY() > 1){
             target_player_->move(CompassDirection::SOUTH);
