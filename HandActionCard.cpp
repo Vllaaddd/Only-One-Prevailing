@@ -18,5 +18,6 @@ void HandActionCard::play(){
         target_player_hand_cards.erase(target_player_hand_cards.begin() + index);
     }else if(id_ == "losts"){
         target_player_hand_cards.erase(target_player_hand_cards.begin() + index);
+        delete taken_card;
     }
 }

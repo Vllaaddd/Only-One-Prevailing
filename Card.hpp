@@ -17,7 +17,7 @@ class Card{
         Card(const Card&) = delete;
         ~Card() = default;
 
-        virtual void printInformationString(Card* card) = 0;
+        virtual void printInformationString() = 0;
         virtual void printPlayMessage() = 0;
         virtual void play() = 0;
 

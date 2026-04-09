@@ -3,14 +3,14 @@
 ActionCard::ActionCard(std::string &id, CompassDirection shark_direction):
     Card(id), shark_direction_(shark_direction), target_player_(nullptr) {}
 
-void ActionCard::printInformationString(Card* card){
+void ActionCard::printInformationString(){
     std::map<CompassDirection, std::string> directions = {
         {CompassDirection::NORTH, "NORTH"},
         {CompassDirection::EAST, "EAST"},
         {CompassDirection::SOUTH, "SOUTH"},
         {CompassDirection::WEST, "WEST"}
     };
-    std::cout << "- " << card->getName() << " - " << directions[shark_direction_] << std::endl;
+    std::cout << "- " << getName() << " - " << directions[shark_direction_] << std::endl;
     
 };
 
@@ -36,5 +36,3 @@ void ActionCard::setTargetPlayer(Player* player){
 CompassDirection ActionCard::getSharkDirection() const{
     return shark_direction_;
 }
-
-void ActionCard::play(){};

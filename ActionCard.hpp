@@ -31,9 +31,9 @@ class ActionCard: public Card{
         ActionCard(const ActionCard&) = delete;
         virtual ~ActionCard() = default;
 
-        void printInformationString(Card* card) override;
+        void printInformationString() override;
         void printPlayMessage() override;
-        virtual void play() override;
+        virtual void play() override = 0;
 
         void setTargetPlayer(Player* target);
         CompassDirection getSharkDirection() const;

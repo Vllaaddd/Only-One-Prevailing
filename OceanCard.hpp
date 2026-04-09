@@ -22,7 +22,7 @@ class OceanCard: public Card{
         OceanCard(const OceanCard&) = delete;
         virtual ~OceanCard() = default;
 
-        void printInformationString(Card* card) override;
+        void printInformationString() override;
         void printPlayMessage() override;
         void play() override;
 

@@ -10,8 +10,8 @@ Board::Board(std::size_t column_count):
 
 Board::~Board() {
     for (auto &column : card_slots_) {
-        for (auto &card_ptr : column) {
-            delete card_ptr;
+        for (auto &card : column) {
+            delete card;
         }
     }
 }
@@ -101,8 +101,14 @@ void Board::placeOceanCard(OceanCard *ocean_card, Coordinates coordinates){
     std::size_t y = coordinates.getY();
 
     if(y > 1){
+        if(card_slots_[x - 1][y - 2] != nullptr){
+            delete card_slots_[x - 1][y - 2];
+        }
         card_slots_[x - 1][y - 2] = ocean_card;
     }else{
+        if(card_slots_[x - 1][y - 1] != nullptr){
+            delete card_slots_[x - 1][y - 1];
+        }
         card_slots_[x - 1][y - 1] = ocean_card;
     }
 }

@@ -15,7 +15,6 @@ class HandActionCard: public ActionCard{
         virtual ~HandActionCard() = default;
 
         void play() override;
-
         void setTargetHandIndex(std::size_t index);
 };
 

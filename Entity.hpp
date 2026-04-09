@@ -24,7 +24,7 @@ class Entity{
         std::optional<Coordinates> getCoordinates() const;
         void setCoordinates(std::size_t x, std::size_t y);
 
-        virtual bool move(CompassDirection movement_direction);
+        virtual bool move(CompassDirection movement_direction) = 0;
 };
 
 #endif

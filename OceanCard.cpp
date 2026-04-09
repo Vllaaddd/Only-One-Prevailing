@@ -4,14 +4,14 @@
 OceanCard::OceanCard(std::string &id, bool shark_icon):
     Card(id), shark_icon_(shark_icon) {}
 
-void OceanCard::printInformationString(Card* card){
+void OceanCard::printInformationString(){
     std::string shark_string;
     if(shark_icon_){
         shark_string = "SHARK";
     }else{
         shark_string = "NO SHARK";
     }
-    std::cout << "- " << card->getName() << " - " << shark_string << std::endl;
+    std::cout << "- " << getName() << " - " << shark_string << std::endl;
 }
 
 void OceanCard::printPlayMessage(){

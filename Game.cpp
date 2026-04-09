@@ -186,13 +186,13 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
         if(deck_type == "action"){
             std::cout << "Cards of the action deck:" << std::endl;
             for(auto card : action_deck_){
-                card->printInformationString(card);
+                card->printInformationString();
             }
             return true;
         }else{
             std::cout << "Cards of the ocean deck:" << std::endl;
             for(auto card : ocean_deck_){
-                card->printInformationString(card);
+                card->printInformationString();
             }
             return true;
         }
@@ -234,6 +234,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                 cards[i]->setTargetPlayer(players_[target_player_id - 1]);
                 cards[i]->printPlayMessage();
                 cards[i]->play();
+                delete cards[i];
                 cards.erase(cards.begin() + i);
                 break;
             }
@@ -296,6 +297,7 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
                             CompassDirection shark_direction = selected_card->getSharkDirection();
                             shark_path.push_back(shark_direction);
                             shark_->move(shark_direction);
+                            delete selected_card;
 
                             Coordinates shark_coordinates = shark_->getCoordinates().value();
                             Coordinates player_coordinates = player->getCoordinates().value();
@@ -351,14 +353,17 @@ bool Game::executeCommand(Command &command, std::size_t target_hand_index){
 void Game::start(){
     while(is_running_){
         Player* current_player = getNextPlayer();
-        
+
+        board_.print(players_, shark_);
+
         if(current_player == nullptr){
-            std::cout << "All players have starved! Game over!" << std::endl;
+            board_.print(players_, shark_);
+            std::cout << "" << std::endl;
+            std::cout << "Beaten by the whims of the sea, the game ends in a draw... Better luck next time." << std::endl;
             is_running_ = false;
             break;
         }
-
-        board_.print(players_, shark_);
+        
 
         if(action_deck_.size() > 1){
             ActionCard* last_deck_card = action_deck_.back();
